@@ -1,0 +1,14 @@
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\bin\Debug\net8.0\LogicaProgramacao.exe
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\bin\Debug\net8.0\LogicaProgramacao.deps.json
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\bin\Debug\net8.0\LogicaProgramacao.runtimeconfig.json
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\bin\Debug\net8.0\LogicaProgramacao.dll
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\bin\Debug\net8.0\LogicaProgramacao.pdb
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.AssemblyInfoInputs.cache
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.AssemblyInfo.cs
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.csproj.CoreCompileInputs.cache
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.dll
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\refint\LogicaProgramacao.dll
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.pdb
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\LogicaProgramacao.genruntimeconfig.cache
+C:\Users\Claudio\Desktop\Curso Logica\CursoLogica\LogicaProgramacao\obj\Debug\net8.0\ref\LogicaProgramacao.dll
