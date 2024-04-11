@@ -1,4 +1,6 @@
-﻿public class EstudoLogica
+﻿using System.Security.Cryptography.X509Certificates;
+
+public class EstudoLogica
 {
     static void Main(string[] args)
     {
@@ -966,47 +968,126 @@
         //Int64 pode ser simplificado mudando para long, que tem o mesmo modo. 64 bits
 
 
-        int QuantidadeProduto = 0;
-        double PrecoUnitario = 0;
-        double ValorTotal = 0;
-        int Loop = 1;
-        string Decisao = "S";
+        //int QuantidadeProduto = 0;
+        //double PrecoUnitario = 0;
+        //double ValorTotal = 0;
+        //int Loop = 1;
+        //string Decisao = "S";
 
-        do
+        //do
+        //{
+        //    Console.WriteLine(" Bem vindo as compras! ");
+        //    Console.ReadKey();
+        //    Console.Clear();
+        //    Console.WriteLine(" Onde temos os melhores preços. ");
+        //    Console.ReadKey();
+        //    Console.Clear();
+        //    Console.WriteLine(" Quantos itens gostaria de comprar? ");
+        //    QuantidadeProduto = Convert.ToInt32(Console.ReadLine());
+
+        //    if (QuantidadeProduto >= 4)
+        //    {
+        //        Console.WriteLine(" Só é permitido 3 compras por vez.");
+        //        continue;
+        //    }
+
+        //    ValorTotal = 0;
+        //    Loop = 1;
+
+        //    do
+        //    {
+        //        Console.WriteLine($" Valor do {Loop} ° produto R$: ");
+        //        PrecoUnitario = double.Parse(Console.ReadLine());
+        //        ValorTotal += PrecoUnitario;
+        //        Loop++;
+        //    }
+        //    while (Loop <= QuantidadeProduto);
+
+        //    Console.WriteLine($" Voce comprou {QuantidadeProduto} de itens, valor total R$: {ValorTotal} ");
+
+        //    Console.WriteLine(" Gostaria de continuar comprando? (S/N) ");
+        //    Decisao = Console.ReadLine();
+        //}
+        //while (Decisao.ToUpper() == "S");
+        //Console.WriteLine(" Obrigado por comprar conosco! ");
+
+        // Mostrando números negativos//
+
+        //int Numero; int Contador = 1; int TotalNegativo =0;
+
+        //do
+        //{
+        //    Console.WriteLine($"Digite o {Contador} 0 numero: ");
+        //    Numero = Convert.ToInt32(Console.ReadLine());
+
+        //    if (Numero < 0)
+        //    {
+        //        TotalNegativo = TotalNegativo + 1;
+
+        //    }
+        //    Contador += 1;
+        //}
+        //while ( Contador <= 5);
+        //Console.WriteLine($"Foram digitados {TotalNegativo} valores negativos!" );
+
+        // Verificar se um número é ou não primo//
+        /* numero primo é o que divide até ele, somente por 2 numeros */
+
+        //int N;
+        //int Cont = 1;
+        //int ContDiv = 0;
+
+        //Console.WriteLine(" Digite um número: ");
+        //N = int.Parse(Console.ReadLine());
+
+        //do
+        //{
+        //    // operador % calcula o resto de uma divisão
+        //    Console.WriteLine(Cont);
+        //    if (N % Cont == 0)
+        //    {
+        //        ContDiv ++ ;          
+        //    }
+        //    Cont++;
+        //}
+        //while (Cont <= N);
+        //if (ContDiv == 2)
+        //{
+        //    Console.WriteLine($" O número {N} é primo. ");
+        //}
+        //else
+        //{
+        //    Console.WriteLine($" O número {N} não é primo. ");
+        //}
+
+        /* Exercicios para depois */
+        // Criar um super contador: com um menu 1, se for selecionado, ele conta
+        // até 10, se for o numero 2, ele conta de 10 até 1, de trás p frente e 3 sai do menu.
+
+        int N1;
+        Console.WriteLine(" [1]-Crescente\n [2]-Decrescente [3]-Sair");
+        N1 = Convert.ToInt32(Console.ReadLine());
+        // Então posso por um loop for dentro dos ifs.. bom saber.
+        if (N1 == 1 )
         {
-            Console.WriteLine(" Bem vindo as compras! ");
-            Console.ReadKey();
-            Console.Clear();
-            Console.WriteLine(" Onde temos os melhores preços. ");
-            Console.ReadKey();
-            Console.Clear();
-            Console.WriteLine(" Quantos itens gostaria de comprar? ");
-            QuantidadeProduto = Convert.ToInt32(Console.ReadLine());
-
-            if (QuantidadeProduto >= 4)
+            for (int i = 0; i < 10;)
             {
-                Console.WriteLine(" Só é permitido 3 compras por vez.");
-                continue;
+                Console.WriteLine(++i);
             }
-
-            ValorTotal = 0;
-            Loop = 1;
-
-            do
-            {
-                Console.WriteLine($" Valor do {Loop} ° produto R$: ");
-                PrecoUnitario = double.Parse(Console.ReadLine());
-                ValorTotal += PrecoUnitario;
-                Loop++;
-            }
-            while (Loop <= QuantidadeProduto);
-
-            Console.WriteLine($" Voce comprou {QuantidadeProduto} de itens, valor total R$: {ValorTotal} ");
-
-            Console.WriteLine(" Gostaria de continuar comprando? (S/N) ");
-            Decisao = Console.ReadLine();
         }
-        while (Decisao.ToUpper() == "S");
-        Console.WriteLine(" Obrigado por comprar conosco! ");
+        else if (N1 == 2)
+        {
+            for (int a = 10; a > 0;)
+            {
+                Console.WriteLine(--a);
+            }
+        }
+        else 
+        { 
+            Console.WriteLine(" Saindo...");
+        }
     }
+
+    /* Exercicio 2 */
+
 }
