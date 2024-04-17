@@ -1,4 +1,7 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
 
 public class EstudoLogica
 {
@@ -1064,30 +1067,195 @@ public class EstudoLogica
         // Criar um super contador: com um menu 1, se for selecionado, ele conta
         // até 10, se for o numero 2, ele conta de 10 até 1, de trás p frente e 3 sai do menu.
 
-        int N1;
-        Console.WriteLine(" [1]-Crescente\n [2]-Decrescente [3]-Sair");
-        N1 = Convert.ToInt32(Console.ReadLine());
-        // Então posso por um loop for dentro dos ifs.. bom saber.
-        if (N1 == 1 )
+        //int N1;
+        //Console.WriteLine(" Contar na ordem:\n\n [1]-Crescente\n [2]-Decrescente\n [3]-Sair\n ");
+        //N1 = Convert.ToInt32(Console.ReadLine());
+        //// Então posso por um loop for dentro dos ifs.. bom saber.
+        //if (N1 == 1 )
+        //{
+        //    for (int i = 0; i < 10;)
+        //    {
+        //        Console.WriteLine(++i);
+        //    }
+        //}
+        //else if (N1 == 2)
+        //{
+        //    for (int a = 10; a > 0;)
+        //    {
+        //        Console.WriteLine(a--);
+        //    }
+        //}
+        //else 
+        //{ 
+        //    Console.WriteLine(" Saindo...");
+        //}
+
+        //string Nome = "Claudio";
+        //int Pass = 123;
+
+        //for (int i = 1; i <= 3; i++)
+        //{
+        //    Console.WriteLine(" Digite seu Nome: ");
+        //    string Name = Console.ReadLine();
+        //    Console.WriteLine(" Digite sua Senha: ");
+        //    int Senha = Convert.ToInt32(Console.ReadLine());
+
+        //    if (Senha == Pass && Name ==Nome)
+        //    {
+        //        Console.WriteLine($"Bem-vindo(a) {Nome} .");
+        //        return;
+        //    }
+        //    else 
+        //    {
+        //        Console.WriteLine(" Usuário ou senha inválidos, tente novamente.");
+
+        //    }
+        //    Console.Clear();
+        //}
+        //Console.WriteLine(" Numero máximo de tentativas atingido.\n Por favor, redefina sua senha.");
+
+        /* O conceito de return, significa que voce cria uma função, passa os parâmetros ( entre
+         * parenteses ) ex: (int A, int B ), executa alguma ação dentro do bloco do código com 
+         * essas variáveis dentro do parametro, as variaveis executam uma soma, ou multiplicação
+         * e no momento que eu precisar dela em um código, vou poder usar pois ela retorna essa 
+         * operação, para fora do bloco.
+         * tipo somar, dividir, verificar.
+         * o return deixa que eu pegue essa função, e utilize essa ação dentro do código com A e B.
+        */
+
+        // Fatorial de numeros.
+
+        //int Contar;
+        //int Numero;
+        //int Fatorial = 1;
+
+        //Console.WriteLine(" Digite um número: ");
+        //Numero = Convert.ToInt32(Console.ReadLine());
+        //Contar = Numero;
+        //Fatorial = 1;
+        //do
+        //{
+        //    Fatorial = Fatorial * Contar;
+        //    Contar = Contar - 1;
+        //} while (Contar > 1);
+        //Console.WriteLine($" O valor do fatorial de {Numero} é igual a {Fatorial} ");
+
+
+
+        /* Exercicio 2, escolhendo pessoas */
+        /* O programa deve escolher pessoas, de acordo com sua categoria.
+         * primeiro ele vai perguntar o sexo da pessoa.
+         * segundo a idade da pessoa
+         * terceiro a cor do cabelo com um menu para selecionar entre as cores, ex: loiro, preto, castanho
+         * e ruivo.
+         * após selecionar uma das opções de cabelo, perguntar se quer continuar sim ou não.
+         * vai ser escolhido várias pessoas, e o programa deve ter como requisito homens maiores de 18 anos
+         * de idade com cabelos castanhos e mulheres devem ter entre 25 e 30 anos e ser loiras.
+         * o programa deve apenas mostrar quantos dos cadastrados, preenchem esses requisitos.
+         * exibir na tela o total de homens com mais de 18 anos e cabelos castanhos
+         * e exibir o total de mulheres entre 25 e 30 anos com cabelos loiros. */
+
+        List<int> Idades = new List<int> ();
+        for (int Idade = 1; Idade <= 130; Idade++)
         {
-            for (int i = 0; i < 10;)
-            {
-                Console.WriteLine(++i);
-            }
+            Idades.Add(Idade);
         }
-        else if (N1 == 2)
+        /* entao um loop for após a lista, faz com que ele percorra o numero desejado, como no ex acima. */
+
+        //Console.WriteLine(Idades[0]);
+        // estrutura List
+        //Idades.Remove(30);
+        // isso remove um elemento da lista 
+
+        List<string> Sexos = new List<string>();
+        Sexos.Add("M");
+        Sexos.Add("F");
+
+        var Cabelo = new List<string>
         {
-            for (int a = 10; a > 0;)
+            "1-Loiro",
+            "2-Preto",
+            "3-Castanho",
+            "4-Ruivo"
+        };
+
+
+        int Contar;
+        string Escolha = "S";
+        string Sex;
+        string Kbelo;
+        int Numero;
+        do
+        {
+            foreach (string A in Sexos)
             {
-                Console.WriteLine(--a);
+                Console.WriteLine($"Escolha o seu sexo: {A}");
             }
+            // importante lembrar que uma variável que vai ler o que tá no console, deve neste caso,
+            // estar fora do foreach, pois se estiver dentro, ele vai ler cada var na lista e vai exibir
+            // um por vez, ao invés de mostrar tudo o que está contido na lista.
+            // se estiver dentro, exibe a primeira linha, voce seleciona, e aí sim ele exibe o que está 
+            // na segunda linha.... Com a variável fora do foreach, ele espera percorrer tudo, e depois 
+            // exibe.
+            Sex = Console.ReadLine().ToUpper();
+
+            if (Sexos.Contains(Sex))
+            {
+                Console.WriteLine($" Voce escolheu {Sex}");
+            }
+            else
+            {
+                Console.WriteLine(" Opçao inválida, escolha uma das duas opções.");
+            }
+
+            foreach (int E in Idades)
+            {
+
+            }
+            Console.WriteLine(" Idade: ");
+            Numero = Convert.ToInt32(Console.ReadLine());
+
+            if (Numero >= 18 && Numero <= 130)
+            {
+                Console.WriteLine($" {Numero} anos de idade. ");
+            }
+            else
+            {
+                Console.WriteLine(" O usuário deve ter entre 18 e 130 anos. ");
+            }
+
+            foreach (var v in Cabelo)
+            {
+                Console.WriteLine($"{v}");
+            }
+            Kbelo = Console.ReadLine();
+
+            if (Cabelo.Any(option => option.StartsWith(Kbelo)))
+            {
+                var cabeloescolhido = Cabelo.First(option => option.StartsWith(Kbelo));
+                Console.WriteLine(cabeloescolhido);
+            }
+            else
+            {
+                Console.WriteLine(" Opção inválida!\n Selecione uma das alternativas .");
+            }
+            Console.WriteLine(" Continuar? [S]/[N]");
+            // nao esquecer que toupper é um método, e todo método é seguido de parenteses digamos assim.
+            Escolha = Console.ReadLine().ToUpper();
+
+            /* Este bloco de código verifica a entrada do usuário para a cor do cabelo.
+            * Ele percorre cada item na lista 'Cabelo', como '1-Loiro', '2-Preto', etc.,
+            * e compara o primeiro caractere de cada item com a entrada do usuário.
+            * Se a entrada do usuário corresponder ao primeiro caractere de um item na lista,
+            * o método '.StartsWith()' retorna verdadeiro e o bloco 'if' é executado.
+            * Dentro do 'if', o método '.First()' encontra o primeiro item que corresponde
+            * e armazena esse valor na variável 'cabeloEscolhido', que é então exibido.
+            * Se não houver correspondência, o bloco 'else' é executado, indicando um erro.
+            * Isso garante que o usuário selecione uma das opções válidas da lista. */
+
+
         }
-        else 
-        { 
-            Console.WriteLine(" Saindo...");
-        }
+
+        while (Escolha == "S");   
     }
-
-    /* Exercicio 2 */
-
 }
