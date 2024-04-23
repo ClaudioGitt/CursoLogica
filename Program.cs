@@ -1140,122 +1140,76 @@ public class EstudoLogica
         //} while (Contar > 1);
         //Console.WriteLine($" O valor do fatorial de {Numero} é igual a {Fatorial} ");
 
-
-
         /* Exercicio 2, escolhendo pessoas */
-        /* O programa deve escolher pessoas, de acordo com sua categoria.
-         * primeiro ele vai perguntar o sexo da pessoa.
-         * segundo a idade da pessoa
-         * terceiro a cor do cabelo com um menu para selecionar entre as cores, ex: loiro, preto, castanho
-         * e ruivo.
-         * após selecionar uma das opções de cabelo, perguntar se quer continuar sim ou não.
-         * vai ser escolhido várias pessoas, e o programa deve ter como requisito homens maiores de 18 anos
-         * de idade com cabelos castanhos e mulheres devem ter entre 25 e 30 anos e ser loiras.
-         * o programa deve apenas mostrar quantos dos cadastrados, preenchem esses requisitos.
-         * exibir na tela o total de homens com mais de 18 anos e cabelos castanhos
-         * e exibir o total de mulheres entre 25 e 30 anos com cabelos loiros. */
-
-        List<int> Idades = new List<int> ();
-        for (int Idade = 1; Idade <= 130; Idade++)
-        {
-            Idades.Add(Idade);
-        }
-        /* entao um loop for após a lista, faz com que ele percorra o numero desejado, como no ex acima. */
-
-        //Console.WriteLine(Idades[0]);
-        // estrutura List
-        //Idades.Remove(30);
-        // isso remove um elemento da lista 
-
-        List<string> Sexos = new List<string>();
-        Sexos.Add("M");
-        Sexos.Add("F");
-
-        var Cabelo = new List<string>
-        {
-            "1-Loiro",
-            "2-Preto",
-            "3-Castanho",
-            "4-Ruivo"
-        };
-
-
-        int Contar;
-        string Escolha = "S";
+        int ContarHomem = 0;
+        int ContarMulher = 0;
+        string Continuar = "S";
+        int Contar = 0;
         string Sex;
-        string Kbelo;
-        int Numero;
-        do
-        {
-            foreach (string A in Sexos)
-            {
-                Console.WriteLine($"Escolha o seu sexo: {A}");
-            }
-            // importante lembrar que uma variável que vai ler o que tá no console, deve neste caso,
-            // estar fora do foreach, pois se estiver dentro, ele vai ler cada var na lista e vai exibir
-            // um por vez, ao invés de mostrar tudo o que está contido na lista.
-            // se estiver dentro, exibe a primeira linha, voce seleciona, e aí sim ele exibe o que está 
-            // na segunda linha.... Com a variável fora do foreach, ele espera percorrer tudo, e depois 
-            // exibe.
+        int Idade;
+        int Cabelo;
+
+        while (Continuar == "S")
+        {        
+            Console.WriteLine(" Qual o sexo: [M/F] ");
             Sex = Console.ReadLine().ToUpper();
+            Console.WriteLine(" Qual a idade? ");
+            Idade = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(" Qual a cor do cabelo? ");
+            Console.WriteLine(" [1] Preto ");
+            Console.WriteLine(" [2] Castanho ");
+            Console.WriteLine(" [3] Loiro ");
+            Console.WriteLine(" [4] Ruivo ");
+            Cabelo = Convert.ToInt32(Console.ReadLine());
 
-            if (Sexos.Contains(Sex))
+            switch (Cabelo)
             {
-                Console.WriteLine($" Voce escolheu {Sex}");
+                case 1:
+                    Console.WriteLine(" Preto ");
+                    break;
+                    case 2:
+                    Console.WriteLine(" Castanho ");
+                        break;
+                    case 3:
+                    Console.WriteLine(" Loiro ");
+                        break;
+                    case 4:
+                    Console.WriteLine(" Ruivo ");
+                        break;
+                default:
+                    Console.WriteLine(" Alternativa inválida.");
+                    break;
             }
-            else
+            /* no caso do if e else if, lembre-se.....o if verifica um primeiro parametro, que foi o homem
+             * depois um else if para verificar o outro que é a mulher.
+             * não é necessário criar vários else ifs, pois as duas condições verdadeiras já foram estabelecidas.
+             * o else trata qualquer coisa que nao for acima.
+             * por ex: o usuario é homem e tem 18 anos e o cabelo é preto? o if verifica.
+             * o usuário nao tem isso? ele pula pro else, e nao preciso especificar o por que, apenas sei que 
+             * um dos dois nao atende aos requisitos.
+             * no caso da mulher, vai um else if, pois ele vai verificar se a mulher é ou nao loira, e se tem
+             * entre 25 e 30 anos.
+             * é bom entender a diferença do "e" e "ou", pois o o "e", precisa que todas as informações sejam
+             * verdadeiras, o "ou", qualquer um que for verdadeiro, ele aceita o código e valida. */
+            if (Sex == "M" && Idade > 18 && Cabelo == 2)
             {
-                Console.WriteLine(" Opçao inválida, escolha uma das duas opções.");
+                Console.WriteLine(" O codigo rodou o primeiro if e aceitou o homem");
+                ContarHomem++;
             }
-
-            foreach (int E in Idades)
+            else if (Sex == "F" && Idade >= 25 && Idade <= 30 && Cabelo == 3)
             {
-
-            }
-            Console.WriteLine(" Idade: ");
-            Numero = Convert.ToInt32(Console.ReadLine());
-
-            if (Numero >= 18 && Numero <= 130)
+                Console.WriteLine(" O codigo rodou o primeiro else if e aceitou a mulher");
+                ContarMulher++;
+            }         
+            else 
             {
-                Console.WriteLine($" {Numero} anos de idade. ");
+                Console.WriteLine("Nao prenche os requisitos");
             }
-            else
-            {
-                Console.WriteLine(" O usuário deve ter entre 18 e 130 anos. ");
-            }
-
-            foreach (var v in Cabelo)
-            {
-                Console.WriteLine($"{v}");
-            }
-            Kbelo = Console.ReadLine();
-
-            if (Cabelo.Any(option => option.StartsWith(Kbelo)))
-            {
-                var cabeloescolhido = Cabelo.First(option => option.StartsWith(Kbelo));
-                Console.WriteLine(cabeloescolhido);
-            }
-            else
-            {
-                Console.WriteLine(" Opção inválida!\n Selecione uma das alternativas .");
-            }
-            Console.WriteLine(" Continuar? [S]/[N]");
-            // nao esquecer que toupper é um método, e todo método é seguido de parenteses digamos assim.
-            Escolha = Console.ReadLine().ToUpper();
-
-            /* Este bloco de código verifica a entrada do usuário para a cor do cabelo.
-            * Ele percorre cada item na lista 'Cabelo', como '1-Loiro', '2-Preto', etc.,
-            * e compara o primeiro caractere de cada item com a entrada do usuário.
-            * Se a entrada do usuário corresponder ao primeiro caractere de um item na lista,
-            * o método '.StartsWith()' retorna verdadeiro e o bloco 'if' é executado.
-            * Dentro do 'if', o método '.First()' encontra o primeiro item que corresponde
-            * e armazena esse valor na variável 'cabeloEscolhido', que é então exibido.
-            * Se não houver correspondência, o bloco 'else' é executado, indicando um erro.
-            * Isso garante que o usuário selecione uma das opções válidas da lista. */
-
-
-        }
-
-        while (Escolha == "S");   
+            Contar++;
+            Console.WriteLine(" Quer continuar? [S/N] ");
+            Continuar = Console.ReadLine().ToUpper();          
+        }      
+        Console.WriteLine($" Total de homens com 18 e cabelos castanhos: {ContarHomem} ");
+        Console.WriteLine($" Total de mulheres entre 25 e 30 anos com cabelos loiros : {ContarMulher}" );
     }
 }
