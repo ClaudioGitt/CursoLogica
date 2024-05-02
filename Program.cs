@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
@@ -1100,7 +1101,7 @@ public class EstudoLogica
         //    Console.WriteLine(" Digite sua Senha: ");
         //    int Senha = Convert.ToInt32(Console.ReadLine());
 
-        //    if (Senha == Pass && Name ==Nome)
+        //    if (Senha == Pass && Name == Nome)
         //    {
         //        Console.WriteLine($"Bem-vindo(a) {Nome} .");
         //        return;
@@ -1141,75 +1142,156 @@ public class EstudoLogica
         //Console.WriteLine($" O valor do fatorial de {Numero} é igual a {Fatorial} ");
 
         /* Exercicio 2, escolhendo pessoas */
-        int ContarHomem = 0;
-        int ContarMulher = 0;
-        string Continuar = "S";
-        int Contar = 0;
-        string Sex;
-        int Idade;
-        int Cabelo;
+        //int ContarHomem = 0;
+        //int ContarMulher = 0;
+        //string Continuar = "S";
+        //int Contar = 0;
+        //string Sex;
+        //int Idade;
+        //int Cabelo;
 
-        while (Continuar == "S")
-        {        
-            Console.WriteLine(" Qual o sexo: [M/F] ");
-            Sex = Console.ReadLine().ToUpper();
-            Console.WriteLine(" Qual a idade? ");
-            Idade = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(" Qual a cor do cabelo? ");
-            Console.WriteLine(" [1] Preto ");
-            Console.WriteLine(" [2] Castanho ");
-            Console.WriteLine(" [3] Loiro ");
-            Console.WriteLine(" [4] Ruivo ");
-            Cabelo = Convert.ToInt32(Console.ReadLine());
+        //while (Continuar == "S")
+        //{
+        //    Console.WriteLine(" Qual o sexo: [M/F] ");
+        //    Sex = Console.ReadLine().ToUpper();
+        //    Console.WriteLine(" Qual a idade? ");
+        //    Idade = Convert.ToInt32(Console.ReadLine());
+        //    Console.WriteLine(" Qual a cor do cabelo? ");
+        //    Console.WriteLine(" [1] Preto ");
+        //    Console.WriteLine(" [2] Castanho ");
+        //    Console.WriteLine(" [3] Loiro ");
+        //    Console.WriteLine(" [4] Ruivo ");
+        //    Cabelo = Convert.ToInt32(Console.ReadLine());
 
-            switch (Cabelo)
+        //    switch (Cabelo)
+        //    {
+        //        case 1:
+        //            Console.WriteLine(" Preto ");
+        //            break;
+        //        case 2:
+        //            Console.WriteLine(" Castanho ");
+        //            break;
+        //        case 3:
+        //            Console.WriteLine(" Loiro ");
+        //            break;
+        //        case 4:
+        //            Console.WriteLine(" Ruivo ");
+        //            break;
+        //        default:
+        //            Console.WriteLine(" Alternativa inválida.");
+        //            break;
+        //    }
+        //    /* no caso do if e else if, lembre-se.....o if verifica um primeiro parametro, que foi o homem
+        //     * depois um else if para verificar o outro que é a mulher.
+        //     * não é necessário criar vários else ifs, pois as duas condições verdadeiras já foram estabelecidas.
+        //     * o else trata qualquer coisa que nao for acima.
+        //     * por ex: o usuario é homem e tem 18 anos e o cabelo é preto? o if verifica.
+        //     * o usuário nao tem isso? ele pula pro else, e nao preciso especificar o por que, apenas sei que 
+        //     * um dos dois nao atende aos requisitos.
+        //     * no caso da mulher, vai um else if, pois ele vai verificar se a mulher é ou nao loira, e se tem
+        //     * entre 25 e 30 anos.
+        //     * é bom entender a diferença do "e" e "ou", pois o o "e", precisa que todas as informações sejam
+        //     * verdadeiras, o "ou", qualquer um que for verdadeiro, ele aceita o código e valida. */
+        //    if (Sex == "M" && Idade > 18 && Cabelo == 2)
+        //    {
+        //        Console.WriteLine(" O codigo rodou o primeiro if e aceitou o homem");
+        //        ContarHomem++;
+        //    }
+        //    else if (Sex == "F" && Idade >= 25 && Idade <= 30 && Cabelo == 3)
+        //    {
+        //        Console.WriteLine(" O codigo rodou o primeiro else if e aceitou a mulher");
+        //        ContarMulher++;
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Nao prenche os requisitos");
+        //    }
+        //    Contar++;
+        //    Console.WriteLine(" Quer continuar? [S/N] ");
+        //    Continuar = Console.ReadLine().ToUpper();
+        //}
+        //Console.WriteLine($" Total de homens com 18 e cabelos castanhos: {ContarHomem} !");
+        //Console.WriteLine($" Total de mulheres entre 25 e 30 anos com cabelos loiros : {ContarMulher} !");
+
+        //int C = 0;
+        //int V = 0;
+        //int Tot010 = 0;
+        //int SImp = 0;
+
+        //for (C = 1; C <= 6; C++)
+        //{
+        //    Console.WriteLine(" Digite um valor: ");
+        //    V = int.Parse(Console.ReadLine());
+
+        //    // Adicionar o || V > 10 caso eu queira fazer contar os numeros acima de 10.
+        //    if (V >= 0 && V <= 10)
+        //    {
+        //        Tot010 += 1;
+        //        if (V % 2 == 1)
+        //        {
+        //            SImp = SImp + V;
+        //        }
+        //    }
+        //}
+        //Console.WriteLine($" Ao toto foram {Tot010} valores entre 0 e 10. ");
+        //Console.WriteLine($" Nesse intervalo, a soma de ímpares foi {SImp} ");
+
+        //int Input;
+        //int Count = 1;
+        ///* Então ao exibir um resultado, posso fazer igual abaixo em writeline, colocar a soma ou multiplicação
+        // * com o resultado . */
+        //Console.WriteLine(" Digite o número da tabuada de soma: ");
+        //Input = int.Parse(Console.ReadLine());
+
+        //while (Count <= 10)
+        //{
+        //    Console.WriteLine($"{Input}+{Count}={Input + Count}");
+
+        //    Count += 1;
+        //}
+
+        /* Então a estrutura do..while ela nao serve quando nao se sabe o valor que quer atingir.
+         * o recomendável seria um while no lugar pois nele sabemos o valor.
+         * loop while: sabemos quantas vezes o loop vai repetir.
+         * do... while: não sabemos quantas vezes o loop irá repetir.
+         * Basicamente o while ele repete enquanto a condição for verdadeira ( while true ) 
+         * mas se a condição for falsa, o bloco nao vai ser executado.
+         * Enquanto o do...while ele é útil quando preciso que o bloco seja executado ao menos uma vez, independente
+         * da condição de parada. Se for verdadeiro, ele continua a executar, mas se for falso, o loop é encerrado. */
+        // Aninhamento de estruturas de repetição
+
+        //int C1 = 0;
+        //int C2 = 0;
+
+
+        //for ( C1 = 1; C1 <= 3; C1++ )
+        //{
+        //    /* Esse aninhamento de estruturas de repetição funciona da seguinte forma:
+        //     * O primeiro for começa contando como 1, e ele passa para o próximo for que é o interno.
+        //     * como o loop for interno começa com 1 mas precisa terminar, ele vai contar até 3
+        //     * e só assim vai para o loop externo, conta mais 1, e o próximo conta 2 e assim por diante.*/
+
+        //    for ( C2 = 1;C2 <= 3; C2++ )   
+        //    Console.WriteLine($"{C1},{C2}");
+        //}
+
+        // Fórmula for para tabuada, que coisa linda kkkk 
+
+        int Num = 0;
+
+        Console.WriteLine(" Quer ver a tabuada de multiplicação do 1 até qual número? ");
+        Num = Convert.ToInt32(Console.ReadLine());
+        /* Então basicamente o loop for dentro do loop for, ele espera o loop interno terminar
+         * para assim iterar mais um externamente, e ele sempre executa tudo internamente primeiro. */
+
+        for (int i = 1; i <= Num; i++) 
+        {
+            Console.WriteLine($"Tabuada de {i}");
+            for (int j = 1; j <= 10; j++)
             {
-                case 1:
-                    Console.WriteLine(" Preto ");
-                    break;
-                    case 2:
-                    Console.WriteLine(" Castanho ");
-                        break;
-                    case 3:
-                    Console.WriteLine(" Loiro ");
-                        break;
-                    case 4:
-                    Console.WriteLine(" Ruivo ");
-                        break;
-                default:
-                    Console.WriteLine(" Alternativa inválida.");
-                    break;
+                
+                Console.WriteLine($"\n{i}x{j}={i*j}.");
             }
-            /* no caso do if e else if, lembre-se.....o if verifica um primeiro parametro, que foi o homem
-             * depois um else if para verificar o outro que é a mulher.
-             * não é necessário criar vários else ifs, pois as duas condições verdadeiras já foram estabelecidas.
-             * o else trata qualquer coisa que nao for acima.
-             * por ex: o usuario é homem e tem 18 anos e o cabelo é preto? o if verifica.
-             * o usuário nao tem isso? ele pula pro else, e nao preciso especificar o por que, apenas sei que 
-             * um dos dois nao atende aos requisitos.
-             * no caso da mulher, vai um else if, pois ele vai verificar se a mulher é ou nao loira, e se tem
-             * entre 25 e 30 anos.
-             * é bom entender a diferença do "e" e "ou", pois o o "e", precisa que todas as informações sejam
-             * verdadeiras, o "ou", qualquer um que for verdadeiro, ele aceita o código e valida. */
-            if (Sex == "M" && Idade > 18 && Cabelo == 2)
-            {
-                Console.WriteLine(" O codigo rodou o primeiro if e aceitou o homem");
-                ContarHomem++;
-            }
-            else if (Sex == "F" && Idade >= 25 && Idade <= 30 && Cabelo == 3)
-            {
-                Console.WriteLine(" O codigo rodou o primeiro else if e aceitou a mulher");
-                ContarMulher++;
-            }         
-            else 
-            {
-                Console.WriteLine("Nao prenche os requisitos");
-            }
-            Contar++;
-            Console.WriteLine(" Quer continuar? [S/N] ");
-            Continuar = Console.ReadLine().ToUpper();          
-        }      
-        Console.WriteLine($" Total de homens com 18 e cabelos castanhos: {ContarHomem} ");
-        Console.WriteLine($" Total de mulheres entre 25 e 30 anos com cabelos loiros : {ContarMulher}" );
+        }
     }
 }
