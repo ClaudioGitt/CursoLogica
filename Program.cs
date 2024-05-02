@@ -1277,21 +1277,32 @@ public class EstudoLogica
 
         // Fórmula for para tabuada, que coisa linda kkkk 
 
-        int Num = 0;
+        //int Num = 0;
 
-        Console.WriteLine(" Quer ver a tabuada de multiplicação do 1 até qual número? ");
-        Num = Convert.ToInt32(Console.ReadLine());
-        /* Então basicamente o loop for dentro do loop for, ele espera o loop interno terminar
-         * para assim iterar mais um externamente, e ele sempre executa tudo internamente primeiro. */
+        //Console.WriteLine(" Quer ver a tabuada de multiplicação do 1 até qual número? ");
+        //Num = Convert.ToInt32(Console.ReadLine());
+        ///* Então basicamente o loop for dentro do loop for, ele espera o loop interno terminar
+        // * para assim iterar mais um externamente, e ele sempre executa tudo internamente primeiro. */
 
-        for (int i = 1; i <= Num; i++) 
-        {
-            Console.WriteLine($"Tabuada de {i}");
-            for (int j = 1; j <= 10; j++)
-            {
+        //for (int i = 1; i <= Num; i++) 
+        //{
+        //    Console.WriteLine($"Tabuada de {i}");
+        //    for (int j = 1; j <= 10; j++)
+        //    {
                 
-                Console.WriteLine($"\n{i}x{j}={i*j}.");
-            }
-        }
+        //        Console.WriteLine($"\n{i}x{j}={i*j}.");
+        //    }
+        //}
+
+        // Exercicio 1: Sequencia de Fibonacci
+        /* Criar um algorítmo que soma dois números, o terceiro número é a soma do primeiro com o segundo, o 
+         * terceiro número é a soma é a soma do primeiro com o segundo e por aí vai.
+         Lembrar que vou ter que contar até 15 nesse exercício. */
+        // Exercício 2: Analisador de valores
+        /* Vou digitar 5 valores, e no final vou exibir a soma dos valores, média entre os valores,
+         * quantos são divisoes por 5, quantos são nulos e a soma dos pares.
+         * tirar a média entre os valores significa somar todos e dividir pelos numeros somados, ex 5 numeros.*/
+
+
     }
 }
