@@ -1344,7 +1344,7 @@ public class EstudoLogica
             {
                 Nulos++;
             }
-            if ( Input % 2 ==0)
+            if ( Input % 2 == 0)
             {
                 Pares += Input;
             }   
@@ -1356,6 +1356,20 @@ public class EstudoLogica
         Console.WriteLine($" Soma dos numeros pares {Pares}");
         Console.WriteLine($" Total de números nulos {Nulos}");
 
-        
+        /* Basicamente então, a forma de pensar aqui é que eu criei corretamente as
+         * variáveis para interação no código.
+         * neste caso, foi importante lembrar de alguns pontos:
+         * 1º- Quando se diz %2, quer dizer que: Se o resultado dos números dividido por
+         * 2 for igual a zero, então os números darão como PAR e nisso, a varável contaria
+         * 2º- No caso de ser divisível por cinco, o raciocinio no código é:
+         * o mesmo para verificar se é par, e a condição && que diz que o input tem q 
+         * ser diferente de zero.
+         * 3º- O input for igual a zero, então entra o número nulo.
+         * 4º- E por fim, se o número for divisivel por 2 e o resultado for zero, o número
+         * se torna par e as variáveis contam em cada condição correspondente.
+         * 5º Calcular a média foi feita após as condições e fora do loop, pois se for 
+         * pensar que calcular a média, consite em somar os números e depois dividir todos 
+         * pela quantidade de números somados, ex: somei 3+3+3+3, a média é dividir essa 
+         * soma, por 4, pois somei 4 algarismos. */
     }
 }
