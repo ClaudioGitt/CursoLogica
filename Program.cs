@@ -8,6 +8,10 @@ public class EstudoLogica
 {
     static void Main(string[] args)
     {
+        /* Treinar a forma de pensar no problema, é a chave para um algoritmo
+         * bem construído. Jamais programe diretamente sem pensar um pouco antes.
+         * Tentativa e erro nao é a resposta, mas sim saber pensar. /*
+
         ///* Ok....existem as entradas de dados , e a saída de dados, no caso do Console
         // * Write ou writeLine ( o line pula linha e isso eu já sei)
         // * ele exibe uma mensagem na tela apenas.
@@ -1289,7 +1293,7 @@ public class EstudoLogica
         //    Console.WriteLine($"Tabuada de {i}");
         //    for (int j = 1; j <= 10; j++)
         //    {
-                
+
         //        Console.WriteLine($"\n{i}x{j}={i*j}.");
         //    }
         //}
@@ -1298,11 +1302,60 @@ public class EstudoLogica
         /* Criar um algorítmo que soma dois números, o terceiro número é a soma do primeiro com o segundo, o 
          * terceiro número é a soma é a soma do primeiro com o segundo e por aí vai.
          Lembrar que vou ter que contar até 15 nesse exercício. */
+
+        //int Num = 1;
+        //int Num2 = 0;
+        //int Resp = 0;
+
+        //for (int k = 1; k < 15; k++)
+        //{
+        //    Resp = Num2 + Num;
+        //    // Resp ele começa somando...
+        //    Num2 = Num;
+        //    // E por último o num...
+        //    Num = Resp;
+        //    // por segundo o num....
+        //    Console.WriteLine(Num2);
+        //}
+        /* Então na lógica acima,neste caso, o Resp ele começa somando as variáveis num2 e num.
+         * Em seguida, ele armazena em num2 o valor de 1 pois num2 pega o que foi armazenado em resp que é 0+1*/
         // Exercício 2: Analisador de valores
         /* Vou digitar 5 valores, e no final vou exibir a soma dos valores, média entre os valores,
          * quantos são divisoes por 5, quantos são nulos e a soma dos pares.
          * tirar a média entre os valores significa somar todos e dividir pelos numeros somados, ex 5 numeros.*/
+        int Input = 0;
+        int Cont = 1;
+        double SomaTotal = 0;
+        double Media = 0;
+        int Nulos = 0;
+        int Pares = 0;
+        int Divporcinco = 0;
 
+        while (Cont <= 5)
+        {
+            Console.WriteLine($"Digite o {Cont}º numero: ");
+            Input = Convert.ToInt32(Console.ReadLine());
+            SomaTotal = SomaTotal + Input;
+            if (Input % 2 == 0 && Input != 0)
+            {
+                Divporcinco++;
+            }
+            else if (Input == 0)
+            {
+                Nulos++;
+            }
+            if ( Input % 2 ==0)
+            {
+                Pares += Input;
+            }   
+            Cont++;
+        }
+        Media = (double)SomaTotal / 5;
+        Console.WriteLine($" Soma total : {SomaTotal}");
+        Console.WriteLine($" Média:{Media}");
+        Console.WriteLine($" Soma dos numeros pares {Pares}");
+        Console.WriteLine($" Total de números nulos {Nulos}");
 
+        
     }
 }
