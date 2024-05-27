@@ -1401,6 +1401,8 @@ public class EstudoLogica
         //Console.WriteLine($" A pessoa mais pesada foi {Pesado}, com {Mai} quilos");
 
         // Aprendendo sobre procedimentos ( métodos )
+        /* O conceito de rotinas, consiste em criar uma série de instruções pré definidas, que pode ser
+         * reutilizadas em outras partes do código, criar uma mensagem, um cálculo ou soma, etc. */
 
         //int a = 0;     
         //int Cont = 0;
@@ -1419,7 +1421,7 @@ public class EstudoLogica
         //do
         //{
         //    Console.WriteLine(" Digite um numero: ");
-        //    int Multi=Convert.ToInt32(Console.ReadLine());
+        //    int Multi = Convert.ToInt32(Console.ReadLine());
         //    E = Multiplicar(E, Multi);
         //    Caunt++;
         //} while (Caunt < 2);
@@ -1431,14 +1433,107 @@ public class EstudoLogica
          * lembrando que preciso passar as variáveis como parâmetro para serem usadas.
          * Observação: Se eu passar 4 parâmetros, eu vou ter que usar os 4 parâmetros referente ao método que
          * criei. */
-        
+
+        //Outro detector de pesado
+        //string K = "";
+        //double P = 0;
+        ///* Variáveis K e P estão sendo usados da seguinte forma: K está sendo utilizado como um parâmetro
+        // * dentro de msg em RotinaPreparo, que serve como um argumento que diz ao método RotinaPreparo
+        // * que está "emprestando" a variável K para que RotinaPreparo use como uma string para armazenar
+        // * todas as mensagens nas variáveis temporárias no parâmetro que está no método RotinaPreparo 
+        // * (string Mensagem, double MaiorPeso), as variáveis K e P são como referencias para que RotinaPreparo
+        // * saiba o que precisa ser feito. O return interrompe a instrução no método e retorna para o parametro
+        // * e o main vai obter o resultado do fim da instrução em RotinaPreparo.
+        // * É como se eu estivesse dizendo " estou te dando estes ingredientes para uma receita. Mas nao posso
+        // * passar 2 ingredientes se o bolo precisa usar 3, eu preciso passar 3 ingredientes.
+        // * O método vai pegar essas informações, efetuar a tarefa e me entregar o bolo pronto.*/
+        //var Msg = "";
+        //string N = "";
+        //string Pesadu = "";
+        //double Mai = 0;
+
+        //Msg = RotinaPreparo(K, P);
+
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    Console.WriteLine(" Escreva um nome: ");
+        //    N = Console.ReadLine();
+        //    Console.WriteLine($" Digite o peso de {N}: ");
+        //    P = Convert.ToDouble(Console.ReadLine());
+        //    if (P > Mai)
+        //    {
+        //        Mai = P;
+        //        Pesadu = N;
+        //    }
+        //    RotinaPreparo(K, P);
+        //}
+        //Console.WriteLine($"A pessoa mais pesada foi: {Pesadu}, com {Mai} quilos.");
+
+        /* Conceito de escopo: O escopo é o local onde uma determinada variável vai funcionar. */
+        /* Como por exemplo, a variável global, no caso onde está o main, ele pode funcionar.
+         * Mas a variável pertencente ao método, só pertence dentro dela. Por isso os parâmetros. */
+        /* Existem dois jeitos de métodos, os de Referência, e os normais que pegam emprestado:
+         * Referência: Quando voce altera diretamente os valores dentro de um método. Pode ser utilizado 
+         * quando voce trabalha com matrizes ( codar uma i.a eu irei usar Referencia de métodos ).
+         * Pegar emprestado: Quando preciso garantir que os dados originais, nao sejam alterados.
+         * Como por exemplo strings, as strings são imutáveis, então os métodos de string sempre serão como
+         * cópias. */
+
+        //int N = 0;
+
+        //Console.WriteLine(" Digite um número: ");
+        //N = Convert.ToInt32(Console.ReadLine());
+        //ParouImpar(N);
+
+        //int X = 4;
+        //int Y = 8;
+
+
+        //Somando(ref X, ref Y);
+        //Console.WriteLine($" Valor de X:{X}");
+        //Console.WriteLine($" Valor de Y:{Y}");
+
+
+        // Exercício para amanhã: Realizar alguns exercicios anteriores utilizando os métodos.
     }
     //public static int Somar(int A, int B)
     //{
     //    return A + B;
     //}
+
     //public static int Multiplicar(int D, int C)
     //{
     //    return D * C;
+    //}
+    //public static string RotinaPreparo(string Mensagem, double MaiorPEso)
+    //{
+    //    Console.Clear();
+    //    Console.WriteLine("--------------------");
+    //    Console.WriteLine(" Detector de pesado ");
+    //    Console.WriteLine($" Maior peso até agora: {MaiorPEso}, KG ");
+    //    Console.WriteLine("--------------------");
+    //    return Mensagem;
+    //}
+    //public static int ParouImpar(int V)
+    //{
+    //    if (V % 2 == 0)
+    //    {
+    //        Console.WriteLine($" O numero {V} é par. ");
+
+    //    }
+    //    else 
+    //    {
+    //        Console.WriteLine($" O número {V} é ímpar. ");
+    //    }
+    //    return V;
+    //}  
+    //public static int Somando(ref int A, ref int B)
+    //{
+    //    A = A + 1;
+    //    B = B + 2;
+    //    Console.WriteLine($"Valor de A:{A}");
+    //    Console.WriteLine($"Valor de B:{B}");
+    //    Console.WriteLine($" A soma vale {A + B}");
+    //    return A + B;
     //}
 }
