@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 
@@ -1488,14 +1489,168 @@ public class EstudoLogica
         //int X = 4;
         //int Y = 8;
 
-
         //Somando(ref X, ref Y);
         //Console.WriteLine($" Valor de X:{X}");
         //Console.WriteLine($" Valor de Y:{Y}");
 
-
         // Exercício para amanhã: Realizar alguns exercicios anteriores utilizando os métodos.
+
+        /* Os métodos não necessariamente retornam resultados, pois eles executam tarefas específicas.
+        * No entanto, funções são responsáveis por retornar valores.
+        * No exemplo abaixo, temos um método chamado Somar que calcula a soma de dois números inteiros. */
+
+        //Somar(5, 5);
+        //int N = 0;
+        //int F = 0;
+
+        //Console.WriteLine(" Digite um número: ");
+        //N = Convert.ToInt32(Console.ReadLine());
+        //F = Fatorial(ref N);
+        //Console.WriteLine($"O valor de {N}! é igual a {F}");
+
+        //int T1 = 0;
+        //int T2 = 1;
+        //for (int i = 3; i <= 10; i++)
+        //{
+        //    int T3= CalculoFibonnaci(ref T1, ref T2);
+        //    Console.WriteLine(T3);
+        //}
+
+        //string Nome = "";
+        //Console.WriteLine(" Digite seu nome: ");
+        //Nome= Console.ReadLine();
+        //Console.WriteLine($"Seu nome possui {Nome.Length} letras");
+
+        // VETORES
+        // Variaveis compostas homogeneas ( pois todas as variáveis são do mesmo tipo "inteiro" )
+        // Segue a estrutura de um array da forma correta.
+
+        //int[] N = new int[4];
+        //N[0] = 1;
+        //N[1] = 2;
+        //N[2] = 3;
+        //N[3] = 4;
+        //foreach (int i in N)
+        //{
+        //    Console.WriteLine(i);
+        //}
+        ////forma simplificada do array
+
+        //int[] Val = [1, 2, 3, 4, 5, 6, 7];
+        //int TotPar = 0;
+        //int C = 0;
+        //for (int i = 1; i < 7; i++)
+        //{
+        //    Console.WriteLine($" Digite o {i}º valor: ");
+        //    // é como se eu dissesse: leia o vetor Val, na posição i
+        //    C = Convert.ToInt32(Console.ReadLine());
+        //    // Então preciso atribuir o valor recebido da variavel C no array para valer.
+        //    Val[i] = C;
+        //    if (Val[i] % 2 == 0)
+        //    {
+        //        TotPar++;
+        //    }
+        //}
+        //for (int i = 1; i < 7; i++)
+        //{
+        //    if (Val[i] % 2 == 0) { Console.WriteLine($" Valor par na posição {i}"); }
+        //}
+        //// Agora mostrará as posições desses valores nos vetores.
+        //Console.WriteLine($" O total de pares foi: {TotPar}");
+
+        //string[] nome = new string[4];
+        //double[] n1 =new double[4];
+        //double[] n2 = new double[4];
+        //double[] media = new double[4];
+        //double SomaMedia = 0;
+        //double MediaTurma = 0;
+        //int TotalAlunos = 0;
+        //int i;
+        //// Declaração de vetores, indicados que possuem 4 posições
+        //for (i = 0; i < 4; i++)
+        //{
+        //    Console.WriteLine($"{i+1}º Aluno: ");
+        //    Console.WriteLine(" Nome: ");
+        //    nome[i] = Console.ReadLine();
+        //    Console.WriteLine("Primeira nota: ");
+        //    n1[i] = Convert.ToDouble(Console.ReadLine());
+        //    Console.WriteLine("Segunda nota: ");
+        //    n2[i]=Convert.ToDouble(Console.ReadLine());
+        //    media[i] = (n1[i] + n2[i]) / 2;
+        //    SomaMedia = SomaMedia + media[i];
+        //    /* O loop for ele inicia seu loop interno.
+        //    Dentro dele o console exibe as mensagens desejadas.
+        //    Aqui é onde mora o pulo do gato: o i do loop, ele vai ir para dentro
+        //    da variável n1 que é um vetor, o i por ser um loop, vai percorrer
+        //    pela quantidade do vetor, que é 4 no console readline.
+        //    vai ser calculada a media, entao o loop também entra na variável, e 
+        //    ela vai receber dentro de n1, vai adicionar a soma do que foi armazenado
+        //    em n1 e n2 através do readline, vai somar e armazenar em media[1]
+        //    somamedia vai armazenar ela, com os valores de media.*/
+        //}
+        //MediaTurma = SomaMedia / 4;
+        //// Calcular a media, é pegar todos os resultados e dividir pelo numero somado
+        //// Igual a calculadora do enem.
+        //for (i = 0; i < 4; i++)
+        //{
+        //    Console.WriteLine($"{nome[i]}, {media[i]}");
+        //    if (media[i]>MediaTurma)
+        //    {
+        //        /* Outro for é iniciado dessa vez para calcular o total de alunos
+        //         acima da média, então entra uma condição if, que verifica se a média
+        //        é maior do que a médiaturma, que recebe a soma media dividido por 4*/
+        //        TotalAlunos++;
+        //    }
+        //}
+        //Console.WriteLine($" Ao todo temos {TotalAlunos} alunos acima da media da turma que e: {MediaTurma} ");
+
+        // Só importa quem começa com "C"
+        //string nome = "";
+        //string[] SoC = new string[10];
+        //int TotalPessoas = 0;
+
+        //for (int i = 0; i < 10; i++)
+        //{
+        //    Console.WriteLine(" Digite seu nome: ");
+        //    nome = Console.ReadLine();
+        //    if (nome.StartsWith("C"))
+        //    {
+        //        SoC[TotalPessoas] = nome;
+        //        TotalPessoas++;
+        //    }
+        //}
+        //for (int i = 0; i < TotalPessoas; i++)
+        //{
+        //    Console.WriteLine($"{SoC[i]}");
+        //}
+
     }
+    //public static int CalculoFibonnaci(ref int N1,ref int N2)
+    //{
+    //    // O ideal é deixar que a função principal exiba as mensagens neste caso.
+    //    int N3 = 0;
+    //    N3 = N1 + N2;
+    //    N1= N2;
+    //    N2 = N3;
+    //    return N3;
+    //}
+
+    //public static int Fatorial(ref int x)
+    //{
+    //    int R = 1;
+    //    for (int C=1; C <= x;C++)
+    //    {
+    //        R=R*C;
+    //    }
+    //    return R;
+    //}
+
+    //public static void Somar(int A, int B)
+    //{
+    //    int C = A + B;
+    //    Console.WriteLine($"A soma de {A} + {B} é: {C}");
+    //}
+
     //public static int Somar(int A, int B)
     //{
     //    return A + B;
